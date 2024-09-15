@@ -30,14 +30,18 @@ main{
 }
 .card{
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas: 
+        "image"
+        "textContent"
+        "footer";
     max-width: 730px;
     background-color: var(--White);
     border-radius: 10px;
     overflow: hidden;
 }
 .image__container{
+    grid-area: image;
     position: relative;
     width: 100%;
     height: 200px;
@@ -50,6 +54,7 @@ main{
     height: auto;
 }
 .card--content{
+    grid-area: textContent;
     padding: 36px 32px 32px 32px;
 }
 .card--title{
@@ -68,6 +73,8 @@ main{
     color: var(--Desaturated-Dark-Blue);
 }
 .card--footer{
+    grid-area: footer;
+    position: relative;
     display: flex;
     justify-content: space-between;
 }
@@ -122,7 +129,7 @@ main{
     background-position: center;
     border-radius: 32px;
 }
-.input--share:checked{
+.input--share:checked, .input--share:hover{
     background-color: var(--Desaturated-Dark-Blue);
     background-image: url('./images/icon-share-checked.svg');
 }
@@ -130,8 +137,9 @@ main{
     position: absolute;
     bottom: 0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
     padding: 0 32px;
     width: 100%;
     height: 80px;
@@ -154,7 +162,88 @@ main{
     width: auto;
     height: 20px;
 }
+.share--logo:nth-of-type(2){
+    width: 20px;
+    height: auto;
+}
+.share--logo:last-of-type{
+    margin-right: 0;
+}
 footer{
     position: absolute;
     bottom: 0;
+}
+@media(min-width: 768px){
+    .card{
+        position: relative;
+        display: grid;
+        grid-template-columns:285px 1fr;
+        grid-template-areas: 
+            "image textContent"
+            "image footer";
+        max-width: 730px;
+        background-color: var(--White);
+        border-radius: 10px;
+    }
+    .image__container{
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+    .card--image{
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: auto;
+        height: 100%;
+    }
+    .card--content{
+        padding: 32px 40px 20px 40px;
+    }
+    .card--title{
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0.25px;
+    }
+    .card--footer--layout{
+        padding: 0 40px 32px 40px;
+        width: 100%;
+    }
+    .input--share:checked{
+        top: 12px;
+    }
+    
+    .share{
+        padding-left: 40px;
+    }
+}
+@media(min-width: 914px){
+    .card{
+        z-index: 0;
+        overflow: visible;
+    }
+    
+    .input--share:checked{
+        top: 0;
+    }
+    .share{
+        z-index: 101;
+        align-items: center;
+        right: -68px;
+        bottom: 96px;
+        padding: 18px 36px;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 10px;
+    }
+    .share--title {
+        margin-right: 16px;
+    }
+    .triangle{
+        position: absolute;
+        bottom: -12px;
+        width: 24px;
+        height: 12px;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    }
 }
