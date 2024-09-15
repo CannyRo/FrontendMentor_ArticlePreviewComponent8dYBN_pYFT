@@ -8,29 +8,46 @@
   
   <title>Frontend Mentor | Article preview component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <article class="card">
+      <div class="image__container">
+        <img src="./images/drawers.jpg" alt="Green furniture with a bouquet of bees in a vase and 2 frames for decoration" class="card--image">
+      </div>
+      <div class="card--content">
+        <h3 class="card--title">Shift the overall look and feel by adding these wonderful 
+          touches to furniture in your home</h3>
+        <p class="card--text">Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I’ve got some simple tips 
+          to help you make any room feel complete.</p>
+      </div>
+      <div class="card--footer">
+        <div class="autor">
+          <img src="./images/avatar-michelle.jpg" alt="Michelle avatar" class="autor--avatar">
+          <div class="autor--container">
+            <h4 class="autor--name">Michelle Appleton</h4>
+            <p class="date">28 Jun 2020</p>
+          </div>
+        </div>
+        <div class="share">
+          <input type="checkbox" name="share" id="share" title="Share this article">
+          <section class="share--menu">
+            <p class="share--title">Share</p>
+            <img src="" alt="" class="share--logo">
+            <img src="" alt="" class="share--logo">
+            <img src="" alt="" class="share--logo">
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="footer__signature">
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          class="footer--link">Frontend Mentor</a>.</p>
+      <p>Coded by <a href="https://cannyro.github.io/hire_mr_canny/en" class="footer--link">WhatCannyDev</a>.</p>
+    </div>
+  </footer>
 </body>
 </html>
