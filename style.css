@@ -38,6 +38,7 @@ main{
     max-width: 730px;
     background-color: var(--White);
     border-radius: 10px;
+    box-shadow: 0 40px 40px -10px hsla(212, 23%, 69%, 0.5);
     overflow: hidden;
 }
 .image__container{
@@ -234,6 +235,7 @@ footer{
         width: fit-content;
         height: fit-content;
         border-radius: 10px;
+        box-shadow: 0 10px 10px hsla(212, 23%, 69%, 0.5);
     }
     .share--title {
         margin-right: 16px;
